@@ -8,5 +8,4 @@ def calculate_matrix_mean(matrix, mode: str) -> torch.Tensor:
     """
     a_t = torch.as_tensor(matrix, dtype=torch.float)
     # Your implementation here
-    
     return a_t.mean(dim=0 if mode=="column" else 1)
