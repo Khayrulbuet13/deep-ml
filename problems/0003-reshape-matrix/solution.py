@@ -1,16 +1,11 @@
-import torch
+import numpy as np
 
-def reshape_matrix(a, new_shape) -> torch.Tensor:
-    """
-    Reshape a 2D matrix `a` to shape `new_shape` using PyTorch.
-    Inputs can be Python lists, NumPy arrays, or torch Tensors.
-    Returns a tensor of shape `new_shape`, or an empty tensor on mismatch.
-    """
-    # Dimension check
-    if len(a) * len(a[0]) != new_shape[0] * new_shape[1]:
-        return torch.tensor([])
-    # Convert to tensor and reshape
-    a_t = torch.as_tensor(a, dtype=torch.float)
-    return torch.reshape(a, new_shape)
-    # Your implementation here
-    pass
+def reshape_matrix(a: list[list[int|float]], new_shape: tuple[int, int]) -> list[list[int|float]]:
+	#Write your code here and return a python list after reshaping by using numpy's tolist() method
+	if len(a)*len(a[0]) != new_shape[0]*new_shape[1]:
+		return []
+	
+	
+	A = np.array(a)
+	
+	return A.reshape(new_shape[0],new_shape[1])
