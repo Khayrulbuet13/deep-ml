@@ -10,5 +10,7 @@ def calculate_eigenvalues(matrix: torch.Tensor) -> torch.Tensor:
     ev_real = ev.real                        # real part only
     result  = ev_real.sort(descending=True)  # (values, indices)
     out     = result.values                  # tensor([3., 1.])
+    # 1 line ans 
+    # return torch.linalg.eigvals(matrix).real.sort(descending=True).values 
 
     return out
